@@ -175,27 +175,4 @@
     margin-left: 0;
   }
 }
-/* Add this in your App.css to style the emoji */
-.emoji {
-  font-size: 2rem; /* Adjust size as needed */
-  display: inline-block;
-  transition: transform 0.2s ease-in-out;
-}
-
-.emoji:hover {
-  transform: scale(1.2); /* Slightly increase the emoji size when hovered */
-}
-
-/* Add some color changes */
-.emoji.shocked {
-  color: red;
-}
-
-.emoji.laughing {
-  color: yellow;
-}
-
-.emoji.normal {
-  color: green;
-}
 
