@@ -53,3 +53,7 @@ You can learn more about **Create React App** in its official documentation:
 
 Here is an overview of the folder structure of this project:
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
