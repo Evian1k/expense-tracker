@@ -42,12 +42,6 @@ However, **you don't need to eject** unless you're sure you need more custom con
 
 ---
 
-## Learn More
-
-You can learn more about **Create React App** in its official documentation:
-
-- [Create React App Documentation](https://facebook.github.io/create-react-app/docs/getting-started)
-- To learn **React**, check out the official [React Documentation](https://reactjs.org/).
 
 ## File Structure
 
