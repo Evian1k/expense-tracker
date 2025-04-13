@@ -1,164 +1,148 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
-  background-color: #f4f7fc;
-  color: #333;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* Container */
+/* Container for the entire app */
 .container {
-  max-width: 1200px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  background-color: #f4f6f9;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Form */
-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 2rem;
+/* Styling for the logo placed below the header */
+.logo-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-form input,
-form button {
-  padding: 10px;
-  font-size: 1rem;
+.app-logo {
+  width: 120px; /* Set a good size for the logo */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  border: 5px solid transparent; /* Default transparent border */
+  background-image: linear-gradient(45deg, #ff6347, #60a3bc); /* Gradient border */
+  background-clip: content-box; /* Ensures border is visible */
+}
+
+.app-logo:hover {
+  transform: scale(1.1); /* Slightly scale up the logo on hover */
+  box-shadow: 0px 10px 30px rgba(255, 99, 71, 0.6); /* Bright shadow on hover */
+  filter: brightness(1.2); /* Enhance brightness on hover */
+}
+
+/* Budget Section */
+.budget-section {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.budget-section input {
+  padding: 12px;
+  font-size: 16px;
+  margin-left: 10px;
   border-radius: 8px;
   border: 1px solid #ddd;
+  width: 200px;
 }
 
-form button {
-  background-color: #007bff;
-  color: #fff;
+/* Display budget status */
+.budget-section p {
+  font-size: 18px;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.budget-section p {
+  transition: color 0.3s ease;
+}
+
+/* Expense Form */
+.expense-form input,
+.expense-form button {
+  padding: 12px;
+  font-size: 16px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.expense-form button {
+  background-color: #60a3bc;
+  color: white;
+  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-form button:hover {
-  background-color: #0056b3;
+.expense-form button:hover {
+  background-color: #4f7a8a;
 }
 
-form input[type="number"] {
-  -moz-appearance: textfield;
+/* Controls for searching and sorting */
+.controls {
+  margin: 20px 0;
 }
 
-form input[type="text"]::placeholder,
-form input[type="number"]::placeholder {
-  color: #aaa;
-}
-
-/* Search and Sorting */
-.search-sort {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 1.5rem;
-}
-
-.search-sort input,
-.search-sort select {
-  padding: 10px;
+.controls input,
+.controls select {
+  padding: 12px;
+  font-size: 16px;
+  margin-right: 12px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  font-size: 1rem;
-  flex: 1;
+  width: 30%;
 }
 
-.search-sort input {
-  flex: 2;
-}
-
-/* Table */
-table {
+/* Expense Table */
+.expense-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 2rem;
+  margin-top: 30px;
 }
 
-table th,
-table td {
-  padding: 12px 16px;
+.expense-table th,
+.expense-table td {
+  padding: 14px;
   text-align: left;
+  border-bottom: 2px solid #eee;
 }
 
-table th {
-  background-color: #f8f9fa;
-  font-weight: 600;
+.expense-table th {
+  background-color: #e0f7fa;
 }
 
-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-table tbody tr:hover {
+.expense-table tr:hover {
   background-color: #f1f1f1;
 }
 
-table td {
-  border-top: 1px solid #ddd;
+.expense-table button {
+  padding: 8px 14px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-table .no-expenses {
+.expense-table button:hover {
+  background-color: #ff4c3b;
+}
+
+/* Expense Chart */
+.expense-chart {
+  margin-top: 40px;
   text-align: center;
-  font-style: italic;
-  color: #777;
 }
 
-/* Mobile Styling */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-  }
-
-  form {
-    grid-template-columns: 1fr;
-  }
-
-  .search-sort {
-    flex-direction: column;
-  }
-}
-
-header img {
-  max-width: 150px;
-  margin: 0 auto;
-  display: block;
-  padding: 20px 0;
-}
-.app-logo {
-  width: 120px; /* Logo size */
-  height: 120px; /* Keep the aspect ratio square */
-  border-radius: 50%; /* Make the logo circular */
-  object-fit: cover; /* Ensure the image covers the circle without stretching */
-  display: block;
-  margin: 20px auto; /* Center the logo with some space around it */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  border: 3px solid #fff; /* White border around logo */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for the floating effect */
-}
-
-/* Hover effects */
-.app-logo:hover {
-  transform: scale(1.1); /* Slightly enlarge the logo */
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow size for more floating effect */
-  opacity: 0.8; /* Slightly reduce opacity on hover */
+.expense-chart canvas {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }

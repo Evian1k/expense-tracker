@@ -78,9 +78,12 @@ function App() {
 
   return (
     <div className="container">
-      {/* 🔥 Logo at the top */}
-      <img src="/logo1.png" alt="Expense Tracker Logo" className="app-logo" />
       <h1>Expense Tracker</h1>
+
+      {/* 🖼 Logo Below Expense Tracker */}
+      <div className="logo-section">
+        <img src="/logo1.png" alt="Expense Tracker Logo" className="app-logo" />
+      </div>
 
       {/* 💰 Budget Section */}
       <div className="budget-section">
