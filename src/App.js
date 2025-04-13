@@ -18,12 +18,12 @@ function App() {
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [editId, setEditId] = useState(null);
-
-  // Budget tracking state
   const [budget, setBudget] = useState(0);
 
-  // Calculate total spent
   const totalSpent = expenses.reduce((acc, exp) => acc + parseFloat(exp.amount || 0), 0);
+  const remainingBudget = budget - totalSpent;
+  const isBudgetExceeded = remainingBudget < 0;
+  const isBudgetNear = remainingBudget <= budget * 0.1 && remainingBudget > 0;
 
   useEffect(() => {
     localStorage.setItem("expenses", JSON.stringify(expenses));
@@ -76,16 +76,13 @@ function App() {
       return a[sortBy].localeCompare(b[sortBy]);
     });
 
-  // Calculate the remaining budget
-  const remainingBudget = budget - totalSpent;
-  const isBudgetExceeded = remainingBudget < 0;
-  const isBudgetNear = remainingBudget <= budget * 0.1 && remainingBudget > 0;
-
   return (
     <div className="container">
+      {/* 🔥 Logo at the top */}
+      <img src="/logo1.png" alt="Expense Tracker Logo" className="app-logo" />
       <h1>Expense Tracker</h1>
 
-      {/* Budget Section */}
+      {/* 💰 Budget Section */}
       <div className="budget-section">
         <label htmlFor="budget">Set Budget:</label>
         <input
@@ -105,7 +102,7 @@ function App() {
         </p>
       </div>
 
-      {/* Expense Form */}
+      {/* 📝 Expense Form */}
       <form onSubmit={handleSubmit} className="expense-form">
         <input name="description" value={form.description} onChange={handleChange} placeholder="Description" required />
         <input name="amount" type="number" value={form.amount} onChange={handleChange} placeholder="Amount" required />
@@ -114,7 +111,7 @@ function App() {
         <button type="submit">{editId ? "Update" : "Add"} Expense</button>
       </form>
 
-      {/* Search and Sort */}
+      {/* 🔍 Search and Sort */}
       <div className="controls">
         <input placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
         <select onChange={(e) => setSortBy(e.target.value)}>
@@ -124,7 +121,7 @@ function App() {
         </select>
       </div>
 
-      {/* Expense Table */}
+      {/* 📋 Expense Table */}
       <table className="expense-table">
         <thead>
           <tr>
@@ -155,7 +152,7 @@ function App() {
         </tbody>
       </table>
 
-      {/* Expense Chart */}
+      {/* 📊 Chart */}
       <ExpenseChart data={expenses} />
     </div>
   );
