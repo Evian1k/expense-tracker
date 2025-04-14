@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ExpenseChart } from "./ExpenseChart";
+import { ExpenseChart } from "./components/ExpenseChart";
 import "./App.css";
 
 function App() {
@@ -82,8 +82,9 @@ function App() {
 
       
       <div className="logo-section">
-        <img src="/logo1.png" alt="Expense Tracker Logo" className="app-logo" />
-      </div>
+  <img src={`${process.env.PUBLIC_URL}/logo1.png`} alt="Expense Tracker Logo" className="app-logo" />
+</div>
+
 
       
       <div className="budget-section">

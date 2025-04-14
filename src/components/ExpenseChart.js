@@ -13,6 +13,7 @@ export function ExpenseChart({ data }) {
   }));
 
   return (
+    <div>
     <div style={{ marginTop: "2rem" }}>
       <h2>Expenses by Category</h2>
       <ResponsiveContainer width="100%" height={300}>
@@ -23,6 +24,7 @@ export function ExpenseChart({ data }) {
           <Bar dataKey="total" fill="#4CAF50" />
         </BarChart>
       </ResponsiveContainer>
+    </div>
     </div>
   );
 }
