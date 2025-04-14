@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import ExpenseForm from "./components/ExpenseForm";
+import ExpenseList from "./components/ExpenseList";
 import { ExpenseChart } from "./components/ExpenseChart";
 import "./App.css";
 
@@ -14,8 +16,6 @@ function App() {
     category: "",
     date: "",
   });
-
-  
 
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("");
@@ -82,13 +82,10 @@ function App() {
     <div className="container">
       <h1>Expense Tracker</h1>
 
-      
       <div className="logo-section">
-  <img src={`${process.env.PUBLIC_URL}/logo1.png`} alt="Expense Tracker Logo" className="app-logo" />
-</div>
+        <img src={`${process.env.PUBLIC_URL}/logo1.png`} alt="Expense Tracker Logo" className="app-logo" />
+      </div>
 
-
-      
       <div className="budget-section">
         <label htmlFor="budget">Set Budget:</label>
         <input
@@ -108,16 +105,13 @@ function App() {
         </p>
       </div>
 
-      
-      <form onSubmit={handleSubmit} className="expense-form">
-        <input name="description" value={form.description} onChange={handleChange} placeholder="Description" required />
-        <input name="amount" type="number" value={form.amount} onChange={handleChange} placeholder="Amount" required />
-        <input name="category" value={form.category} onChange={handleChange} placeholder="Category" required />
-        <input name="date" type="date" value={form.date} onChange={handleChange} required />
-        <button type="submit">{editId ? "Update" : "Add"} Expense</button>
-      </form>
+      <ExpenseForm
+        form={form}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+        editId={editId}
+      />
 
-      
       <div className="controls">
         <input placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
         <select onChange={(e) => setSortBy(e.target.value)}>
@@ -127,38 +121,8 @@ function App() {
         </select>
       </div>
 
-      
-      <table className="expense-table">
-        <thead>
-          <tr>
-            <th>Description</th>
-            <th>Amount ($)</th>
-            <th>Category</th>
-            <th>Date</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filtered.length > 0 ? (
-            filtered.map((exp) => (
-              <tr key={exp.id}>
-                <td>{exp.description}</td>
-                <td>{exp.amount}</td>
-                <td>{exp.category}</td>
-                <td>{exp.date}</td>
-                <td>
-                  <button onClick={() => handleEdit(exp.id)}>Edit</button>
-                  <button onClick={() => handleDelete(exp.id)}>Delete</button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr><td colSpan="5" style={{ textAlign: "center" }}>No expenses found</td></tr>
-          )}
-        </tbody>
-      </table>
+      <ExpenseList expenses={filtered} onEdit={handleEdit} onDelete={handleDelete} />
 
-      
       <ExpenseChart data={expenses} />
     </div>
   );
