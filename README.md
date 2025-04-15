@@ -10,7 +10,16 @@ This is a simple **Expense Tracker** app built with **React**. It allows you to:
 - **Budget tracking (coming soon)**: Track your spending in various categories, ensuring you stay within your budget.
 
 ---
-expense-tracker/ │ ├── public/ │ ├── index.html # The main HTML file for the app │ ├── manifest.json # App settings for mobile and PWA (Progressive Web App) │ └── robots.txt # Instructions for search engines │ ├── src/ │ ├── App.css # Styles specific to the App component │ ├── App.js # Main app file where components and logic live │ ├── index.css # Global styles for the entire app │ ├── index.js # Entry point where React renders the app │ ├── components/ # Contains reusable parts of the app │ │ ├── ExpenseForm.js # Form to add a new expense │ │ ├── ExpenseList.js # Displays the list of expenses │ │ └── ExpenseItem.js # Shows each individual expense │ └── utils/ # Contains helper functions │ └── dateFormatter.js # Formats dates in a user-friendly way │ ├── .gitignore # Specifies which files should be ignored by Git ├── package.json # Project dependencies and metadata └── README.md # This file
+
+## File Structure
+
+Here’s an overview of the folder structure of this project:
+
+expense-tracker/ │ ├── public/ │ ├── index.html # The main HTML file for the app │ ├── manifest.json # App settings for mobile and PWA (Progressive Web App) │ └── robots.txt # Instructions for search engines │ ├── src/ │ ├── App.css # Styles specific to the App component │ ├── App.js # Main app file where components and logic live │ ├── index.css # Global styles for the entire app │ ├── index.js # Entry point where React renders the app │ ├── components/ # Contains reusable parts of the app │ │ ├── ExpenseForm.js # Form to add a new expense │ │ ├── ExpenseList.js # Displays the list of expenses │ │ └── ExpenseItem.js # Shows each individual expense │ └── utils/ # Helper functions │ └── dateFormatter.js # Formats dates in a user-friendly way │ ├── .gitignore # Specifies which files should be ignored by Git ├── package.json # Project dependencies and metadata └── README.md # This file
+
+
+---
+
 ## Available Scripts
 
 In the project directory, you can run the following commands:
@@ -42,12 +51,29 @@ However, **you don't need to eject** unless you're sure you need more custom con
 
 ---
 
+## Netlify Deployment
 
-## File Structure
+You can deploy your **Expense Tracker** app on Netlify to make it accessible online. Here's how to do it:
 
-Here is an overview of the folder structure of this project:
+1. **Build the app**: Run the following command to create a production-ready build of your app:
+
+
+2. **Deploy to Netlify**:
+- If you’re using the Netlify CLI, simply run:
+  ```
+  netlify deploy
+  ```
+- Alternatively, you can drag and drop the `build` folder to Netlify's web UI for deployment.
+
+3. **Continuous Deployment**: 
+- You can link your GitHub repository to Netlify for continuous deployment. Every time you push updates to your GitHub repository, Netlify will automatically deploy the latest version of your app.
+
+Your app will be available at the Netlify URL once deployed. You can also customize the URL and manage settings via the Netlify dashboard.
+
+For more information about Netlify deployment, visit the official [Netlify Docs](https://docs.netlify.com/).
+
+---
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
