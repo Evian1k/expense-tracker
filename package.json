@@ -2,7 +2,9 @@
   "name": "expense-tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://evian1k.github.io/expense-tracker",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "main": "index.js",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
