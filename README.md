@@ -71,6 +71,11 @@ You can deploy your **Expense Tracker** app on Netlify to make it accessible onl
 Your app will be available at the Netlify URL once deployed. You can also customize the URL and manage settings via the Netlify dashboard.
 
 Here is my Netlify link [taupe-fudge-700193.netlify.app]
+### 🔗 Live Demo
+
+- GitHub Pages: [evian1k.github.io/expense-tracker](https://evian1k.github.io/expense-tracker)
+- Netlify: [taupe-fudge-700193.netlify.app](https://taupe-fudge-700193.netlify.app)
+
 ---
 
 ## License
